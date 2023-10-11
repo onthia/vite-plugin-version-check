@@ -6,13 +6,16 @@ settings:
 
 dependencies:
   vite:
-    specifier: ^2.6.0 || 3 || 4
+    specifier: ^4.0.0
     version: 4.4.9(@types/node@20.7.2)
 
 devDependencies:
   '@types/node':
     specifier: ^20.7.2
     version: 20.7.2
+  fix-esm-import-path:
+    specifier: ^1.4.0
+    version: 1.4.0
   typescript:
     specifier: ^5.2.2
     version: 5.2.2
@@ -220,6 +223,18 @@ packages:
   /@types/node@20.7.2:
     resolution: {integrity: sha512-RcdC3hOBOauLP+r/kRt27NrByYtDjsXyAuSbR87O6xpsvi763WI+5fbSIvYJrXnt9w4RuxhV6eAXfIs7aaf/FQ==}
 
+  /debug@4.3.4:
+    resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: 2.1.2
+    dev: true
+
   /esbuild@0.18.20:
     resolution: {integrity: sha512-ceqxoedUrcayh7Y7ZX6NdbbDzGROiyVBgC4PriJThBKSVPWnnFHZAkfI1lJT8QFkOwH4qOS2SJkS4wvpGl8BpA==}
     engines: {node: '>=12'}
@@ -250,6 +265,15 @@ packages:
       '@esbuild/win32-x64': 0.18.20
     dev: false
 
+  /fix-esm-import-path@1.4.0:
+    resolution: {integrity: sha512-xTkmzlotSgZwn3mNOZA6R6IK0Ow1uQvtdeGS8hqRa1nl8rwdtxZPWktorKcwvsUDpCPnqFbkfsya9P3MG6rTcg==}
+    hasBin: true
+    dependencies:
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -257,6 +281,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /ms@2.1.2:
+    resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
+    dev: true
 
   /nanoid@3.3.6:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}

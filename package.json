@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-deploy-check",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vite plugin to refresh page after deployment",
   "type": "module",
   "main": "./dist/index.js",
@@ -14,8 +14,9 @@
   },
   "scripts": {
     "dev": "tsc --watch",
-    "build": "tsc --module commonjs && mv dist/index.js dist/index.cjs && tsc",
-    "prepare": "npm run build"
+    "build": "tsc --module commonjs && mv dist/index.js dist/index.cjs && tsc && npm run fix",
+    "prepare": "npm run build",
+    "fix": "fix-esm-import-path dist/index.js"
   },
   "files": [
     "dist"
@@ -28,10 +29,11 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.7.2",
+    "fix-esm-import-path": "^1.4.0",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
-    "vite": "^2.6.0 || 3 || 4"
+    "vite": "^4.0.0"
   },
   "repository": {
     "type": "git",

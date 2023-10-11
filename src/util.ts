@@ -1,3 +1,5 @@
+import { PluginDeployCheckOption } from "./typing";
+
 export const sleep = (interval: number) =>
   new Promise<void>((resolve) =>
     setTimeout(() => {
@@ -5,17 +7,20 @@ export const sleep = (interval: number) =>
     }, interval)
   );
 
-export async function getVersion() {
-  const response = await fetch("/version.json");
+export async function getVersion(fileName: string) {
+  const response = await fetch("/" + fileName);
   const result: { version: string } = await response.json();
   return result ?? {};
 }
 
-export async function checkVersion(key: string) {
-  const localVersion = localStorage.getItem(key);
-  const { version: remoteVersion } = await getVersion();
+export async function checkVersion({
+  storeKey,
+  fileName,
+}: PluginDeployCheckOption) {
+  const localVersion = localStorage.getItem(storeKey);
+  const { version: remoteVersion } = await getVersion(fileName);
   if (remoteVersion !== localVersion) {
-    localStorage.setItem(key, remoteVersion);
+    localStorage.setItem(storeKey, remoteVersion);
     location.reload();
   }
 }
