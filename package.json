@@ -1,0 +1,36 @@
+{
+  "name": "vite-plugin-deploy-check",
+  "version": "1.0.0",
+  "description": "Vite plugin to refresh page after deployment",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc --module commonjs && mv dist/index.js dist/index.cjs && tsc",
+    "prepare": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "vite",
+    "vite-plugin"
+  ],
+  "author": "Onthia",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.7.2",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "vite": "^2.6.0 || 3 || 4"
+  }
+}
