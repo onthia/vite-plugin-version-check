@@ -32,5 +32,9 @@
   },
   "peerDependencies": {
     "vite": "^2.6.0 || 3 || 4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/onthia/vite-plugin-version-check"
   }
 }
