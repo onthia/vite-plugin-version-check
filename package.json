@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-deploy-check",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vite plugin to refresh page after deployment",
   "type": "module",
   "main": "./dist/index.js",

@@ -8,7 +8,7 @@ export const sleep = (interval: number) =>
   );
 
 export async function getVersion(fileName: string) {
-  const response = await fetch("/" + fileName);
+  const response = await fetch(fileName);
   const result: { version: string } = await response.json();
   return result ?? {};
 }
