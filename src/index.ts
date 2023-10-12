@@ -18,7 +18,7 @@ export default (option?: PluginDeployCheckOption): Plugin => {
       config = resolvedConfig;
     },
     transformIndexHtml(html: string) {
-      const reg = new RegExp(`crossorigin src\="[^"]+\-([a-z0-9]+)\.js"`);
+      const reg = new RegExp(`crossorigin src\="[^"]+\-|\.([a-z0-9]+)\.js"`);
       const version = html.match(reg)?.[1] || `${+new Date()}`;
 
       fs.writeFileSync(
