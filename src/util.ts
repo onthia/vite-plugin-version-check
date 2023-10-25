@@ -21,6 +21,6 @@ export async function checkVersion({
   const { version: remoteVersion } = await getVersion(fileName);
   if (remoteVersion !== localVersion) {
     localStorage.setItem(storeKey, remoteVersion);
-    if (!localVersion) location.reload();
+    location.reload();
   }
 }
